@@ -5,7 +5,7 @@
 # =========================
 
 SERVERS="iperf3.example.com"
-OUTDIR="/var/db/node_exporter/iperf3"
+OUTDIR="/var/db/node_exporter"
 OUTFILE="$OUTDIR/iperf3.prom"
 TMPFILE="$OUTDIR/iperf3.prom.$$"
 IPERF_BIN="/usr/local/bin/iperf3"
