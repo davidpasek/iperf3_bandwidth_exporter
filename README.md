@@ -104,5 +104,20 @@ sysrc prometheus_args="--storage.tsdb.retention.time=30d" # 30 days data retenti
 service prometheus start
 ```
 
-Default Prometheus configuration at __*/usr/local/etc/prometheus.yml*__ should work out of the box.
+Default Prometheus configuration on FreeBSD is available at __*/usr/local/etc/prometheus.yml*__ and it monitors only itself.
 
+You should use Prometheus configuration __*prometheus.yml*__ available in this repository. It is full Prometheus configuration. The only section added to the default configuration is the scraping of local node_exporter. Such section (Prometheus configuration sippet) is documented below ...
+
+```yaml
+  - job_name: "node_exporter"
+    static_configs:
+      - targets: ["localhost:9100"]
+```
+
+### Verify Prometheus is working
+
+Get web page at __*http://[IP-ADDRESS-OF-YOUR-NODE]]:9090/-/healthy*__ and you should see message ...
+
+```text
+Prometheus Server is Healthy.
+```
