@@ -1,5 +1,11 @@
 # iperf3_bandwidth_exporter
-Using iperf3 for bandwidth monitoring and creating Prometheus textfile exporter
+Using iperf3 for bandwidth monitoring and creating Prometheus textfile exporter.
+
+The solution is based on
+* sh - Bourne Shell - default shell in FreeBSD
+* jq - Command-line JSON processor
+* bc - arbitrary-precision decimal arithmetic language and calculator
+* iperf3 - perform network throughput tests
 
 ## Instalation on FreeBSD
 Install required FreeBSD packages
