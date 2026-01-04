@@ -67,6 +67,28 @@ sysrc node_exporter_textfile_dir="/var/db/node_exporter"
 service node_exporter start
 ```
 
+### Verify Node Exporter is working
+
+Get web page at __*http://[IP-ADDRESS-OF-YOUR-NODE]]:9100/metrics*__ and you should see something like ...
+
+```text
+# HELP iperf_download_mbps iperf3 download throughput
+# TYPE iperf_download_mbps gauge
+iperf_download_mbps{server="iperf3.example.com"} 138.82734053767794
+# HELP iperf_retransmits_download iperf3 TCP retransmits (download)
+# TYPE iperf_retransmits_download gauge
+iperf_retransmits_download{server="iperf3.example.com"} 58
+# HELP iperf_retransmits_upload iperf3 TCP retransmits (upload)
+# TYPE iperf_retransmits_upload gauge
+iperf_retransmits_upload{server="iperf3.example.com"} 0
+# HELP iperf_up iperf3 measurement success (1=ok, 0=error)
+# TYPE iperf_up gauge
+iperf_up{server="iperf3.example.com"} 1
+# HELP iperf_upload_mbps iperf3 upload throughput
+# TYPE iperf_upload_mbps gauge
+iperf_upload_mbps{server="iperf3.example.com"} 192.61248497752766
+```
+
 ## Using Prometheus to store monitoring data
 
 ### Prometheus installation
