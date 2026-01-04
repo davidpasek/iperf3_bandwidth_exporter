@@ -4,14 +4,14 @@ Using iperf3 for bandwidth monitoring and creating Prometheus textfile exporter.
 The solution is based on
 * sh - Bourne Shell - default shell in FreeBSD
 * jq - Command-line JSON processor
-* bc - arbitrary-precision decimal arithmetic language and calculator
+* bc - arbitrary-precision decimal arithmetic language and calculator - default software in FreeBSD
 * iperf3 - perform network throughput tests
 
 ## Instalation on FreeBSD
 Install required FreeBSD packages
 
 ```code
-pkg install iperf3 jq bc
+pkg install iperf3 jq
 ```
 
 Copy bandwidth monitoring script to production location 
