@@ -62,7 +62,8 @@ Jan  4 19:20:00 freebsd01 /usr/sbin/cron[12141]: (root) CMD (/usr/local/bin/iper
 
 ```bash
 sysrc node_exporter_enable="YES"
-sysrc node_exporter_args="--collector.textfile.directory=/var/db/node_exporter"
+sysrc node_exporter_listen_address=":9100"
+sysrc node_exporter_textfile_dir="/var/db/node_exporter"
 service node_exporter start
 ```
 
