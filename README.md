@@ -128,7 +128,7 @@ Go to Prometheus web interface at __*http://[IP-ADDRESS-OF-YOUR-NODE]]:9090/*__
 
 You can use folowing PromQL for graphing (time series) ...
 
-```text
+```test
 iperf_download_mbps{server="iperf3.example.com"}
 iperf_upload_mbps{server="iperf3.example.com"}
 
@@ -138,3 +138,21 @@ avg_over_time(iperf_upload_mbps{server="iperf3.example.com"}[30m])
 avg_over_time(iperf_download_mbps{server="iperf3.example.com"}[1h])
 avg_over_time(iperf_upload_mbps{server="iperf3.example.com"}[1h])
 ```
+
+If you want add two time series (download and upload) into a single graph, you can do it by following PromQL ...
+
+```text
+label_replace(
+  iperf_download_mbps{server="iperf3.uw.cz"},
+  "direction", "download", "", ""
+)
+OR
+label_replace(
+  iperf_upload_mbps{server="iperf3.uw.cz"},
+  "direction", "upload", "", ""
+)
+```
+
+Screenshot of above PromQL visualization is depicted below.
+
+![Prometheus visualization](./prometheus/Prometheus_visualization.jpg)
