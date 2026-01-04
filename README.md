@@ -121,3 +121,20 @@ Get web page at __*http://[IP-ADDRESS-OF-YOUR-NODE]]:9090/-/healthy*__ and you s
 ```text
 Prometheus Server is Healthy.
 ```
+
+### Using Prometheus to visualize historical data
+
+Get web page at __*http://[IP-ADDRESS-OF-YOUR-NODE]]:9090/*__ 
+
+You can use folowing PromQL for graphing (time series) ...
+
+```text
+iperf_download_mbps{server="iperf3.uw.cz"}
+iperf_upload_mbps{server="iperf3.uw.cz"}
+
+avg_over_time(iperf_download_mbps{server="iperf3.uw.cz"}[30m])
+avg_over_time(iperf_upload_mbps{server="iperf3.uw.cz"}[30m])
+
+avg_over_time(iperf_download_mbps{server="iperf3.uw.cz"}[1h])
+avg_over_time(iperf_upload_mbps{server="iperf3.uw.cz"}[1h])
+```
