@@ -116,7 +116,7 @@ You should use Prometheus configuration __*prometheus.yml*__ available in this r
 
 ### Verify Prometheus is working
 
-Get web page at __*http://[IP-ADDRESS-OF-YOUR-NODE]]:9090/-/healthy*__ and you should see message ...
+Get web page from __*http://[IP-ADDRESS-OF-YOUR-NODE]]:9090/-/healthy*__ and you should see message ...
 
 ```text
 Prometheus Server is Healthy.
@@ -124,17 +124,17 @@ Prometheus Server is Healthy.
 
 ### Using Prometheus to visualize historical data
 
-Get web page at __*http://[IP-ADDRESS-OF-YOUR-NODE]]:9090/*__ 
+Go to Prometheus web interface at __*http://[IP-ADDRESS-OF-YOUR-NODE]]:9090/*__ 
 
 You can use folowing PromQL for graphing (time series) ...
 
 ```text
-iperf_download_mbps{server="iperf3.uw.cz"}
-iperf_upload_mbps{server="iperf3.uw.cz"}
+iperf_download_mbps{server="iperf3.example.com"}
+iperf_upload_mbps{server="iperf3.example.com"}
 
-avg_over_time(iperf_download_mbps{server="iperf3.uw.cz"}[30m])
-avg_over_time(iperf_upload_mbps{server="iperf3.uw.cz"}[30m])
+avg_over_time(iperf_download_mbps{server="iperf3.example.com"}[30m])
+avg_over_time(iperf_upload_mbps{server="iperf3.example.com"}[30m])
 
-avg_over_time(iperf_download_mbps{server="iperf3.uw.cz"}[1h])
-avg_over_time(iperf_upload_mbps{server="iperf3.uw.cz"}[1h])
+avg_over_time(iperf_download_mbps{server="iperf3.example.com"}[1h])
+avg_over_time(iperf_upload_mbps{server="iperf3.example.com"}[1h])
 ```
