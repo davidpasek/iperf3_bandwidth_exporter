@@ -58,6 +58,12 @@ Jan  4 19:20:00 freebsd01 /usr/sbin/cron[12141]: (root) CMD (/usr/local/bin/iper
 
 ## Using Node Exporter to expose iperf3 data
 
+### Node Exporter installation
+
+```bash
+pkg install node_exporter
+```
+
 ### Enable and start Node Exporter
 
 ```bash
@@ -96,6 +102,7 @@ iperf_upload_mbps{server="iperf3.example.com"} 192.61248497752766
 ```bash
 pkg install prometheus
 ```
+
 ### Configure and start Prometheus
 
 ```bash
