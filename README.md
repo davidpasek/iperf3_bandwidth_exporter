@@ -7,7 +7,7 @@ The monitoring script requires
 * jq - Command-line JSON processor
 * bc - arbitrary-precision decimal arithmetic language and calculator - default software in FreeBSD
 
-The monitoring script generates iperf3 metrics into file __*/var/db/node_exporter/iperf3/iperf3.prom*__
+The monitoring script generates iperf3 metrics into file __*/var/db/node_exporter/iperf3.prom*__
 
 ## iperf3 Monitoring Script
 
