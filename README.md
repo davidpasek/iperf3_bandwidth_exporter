@@ -14,9 +14,10 @@ Install required FreeBSD packages
 pkg install iperf3 jq
 ```
 
-Copy bandwidth monitoring script to production location 
+Make bandwidth monitoring script executable and copy it to production location 
 
 ```code
+chmod 755 ./iperf3_bandwidth_exporter.sh
 cp ./iperf3_bandwidth_exporter.sh /usr/local/bin/iperf3_bandwidth_exporter.sh
 ```
 
