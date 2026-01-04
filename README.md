@@ -1,4 +1,4 @@
-# iperf3_bandwidth_exporter - Internet Bandwidth Monitoring Solution
+# Internet Bandwidth Monitoring Solution (iperf3_bandwidth_exporter)
 The intention of this solution is to use iperf3 for Internet bandwidth monitoring and creating node_exporter file usable by Prometheus for longer data retention and visualization.
 
 The monitoring script requires
