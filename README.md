@@ -78,7 +78,7 @@ service node_exporter start
 
 ### Verify Node Exporter is working
 
-Get web page at __*http://[IP-ADDRESS-OF-YOUR-NODE]]:9100/metrics*__ and you should see something like ...
+Get web page at __*http://[IP-ADDRESS-OF-YOUR-NODE]:9100/metrics*__ and you should see something like ...
 
 ```text
 # HELP iperf_download_mbps iperf3 download throughput
