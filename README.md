@@ -25,6 +25,7 @@ Fetch the bandwidth monitoring script, make it executable and copy it to product
 
 ```bash
 fetch https://raw.githubusercontent.com/davidpasek/iperf3_bandwidth_exporter/refs/heads/main/iperf3_bandwidth_exporter.sh
+chown root:wheel ./iperf3_bandwidth_exporter.sh
 # CHANGE IPERF3 SERVERS IN THE SCRIPT - Use one or more iperf3 servers separated by spaces
 # SERVERS="iperf3-a.example.com iperf3-b.example.com iperf3-c.example.com"
 chmod 755 ./iperf3_bandwidth_exporter.sh
@@ -116,7 +117,15 @@ service prometheus start
 
 Default Prometheus configuration on FreeBSD is available at __*/usr/local/etc/prometheus.yml*__ and it monitors only itself.
 
-You should use Prometheus configuration __*prometheus.yml*__ available in this repository. It is full Prometheus configuration. The only section added to the default configuration is the scraping of local node_exporter. Such section (Prometheus configuration sippet) is documented below ...
+You should use Prometheus configuration __*prometheus.yml*__ available in this repository. It is full Prometheus configuration. 
+
+```bash
+fetch https://github.com/davidpasek/iperf3_bandwidth_exporter/blob/main/prometheus/prometheus.yml
+chown root:wheel ./prometheus.yml
+cp ./prometheus.yml  /usr/local/etc/prometheus.yml
+```
+
+The only section added to the default configuration is the scraping of local node_exporter. Such section (Prometheus configuration sippet) is documented below ...
 
 ```yaml
   - job_name: "node_exporter"
