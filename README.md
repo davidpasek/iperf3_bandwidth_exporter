@@ -123,9 +123,6 @@ You should use Prometheus configuration __*prometheus.yml*__ available in this r
 fetch https://raw.githubusercontent.com/davidpasek/iperf3_bandwidth_exporter/refs/heads/main/prometheus/prometheus.yml
 chown root:wheel ./prometheus.yml
 cp ./prometheus.yml  /usr/local/etc/prometheus.yml
-```
-
-```bash
 service prometheus stop
 service prometheus start
 ```
