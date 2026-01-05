@@ -125,6 +125,11 @@ chown root:wheel ./prometheus.yml
 cp ./prometheus.yml  /usr/local/etc/prometheus.yml
 ```
 
+```bash
+service prometheus stop
+service prometheus start
+```
+
 The only section added to the default configuration is the scraping of local node_exporter. Such section (Prometheus configuration sippet) is documented below ...
 
 ```yaml
