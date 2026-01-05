@@ -120,7 +120,7 @@ Default Prometheus configuration on FreeBSD is available at __*/usr/local/etc/pr
 You should use Prometheus configuration __*prometheus.yml*__ available in this repository. It is full Prometheus configuration. 
 
 ```bash
-fetch https://github.com/davidpasek/iperf3_bandwidth_exporter/blob/main/prometheus/prometheus.yml
+fetch https://raw.githubusercontent.com/davidpasek/iperf3_bandwidth_exporter/refs/heads/main/prometheus/prometheus.yml
 chown root:wheel ./prometheus.yml
 cp ./prometheus.yml  /usr/local/etc/prometheus.yml
 ```
