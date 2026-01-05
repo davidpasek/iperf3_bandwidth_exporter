@@ -21,9 +21,12 @@ In this section we cover the installation of iperf3_bandwidth_exporter script on
 pkg install iperf3 jq
 ```
 
-### Make bandwidth monitoring script executable and copy it to production location 
+Fetch the bandwidth monitoring script, make it executable and copy it to production location 
 
 ```bash
+fetch https://raw.githubusercontent.com/davidpasek/iperf3_bandwidth_exporter/refs/heads/main/iperf3_bandwidth_exporter.sh
+# CHANGE IPERF3 SERVERS IN THE SCRIPT - Use one or more iperf3 servers separated by spaces
+# SERVERS="iperf3-a.example.com iperf3-b.example.com iperf3-c.example.com"
 chmod 755 ./iperf3_bandwidth_exporter.sh
 cp ./iperf3_bandwidth_exporter.sh /usr/local/bin/iperf3_bandwidth_exporter.sh
 ```
